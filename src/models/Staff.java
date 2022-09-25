@@ -1,6 +1,7 @@
 package models;
 
 import enums.Department;
+import interfaces.CarBuyerInterface;
 
 public class Staff {
     private Integer id;
@@ -39,6 +40,7 @@ public class Staff {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
 
     @Override
     public String toString() {

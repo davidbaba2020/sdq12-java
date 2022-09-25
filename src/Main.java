@@ -47,9 +47,10 @@ public class Main {
         Roof closeRoof = new Roof(2,ROOFTYPE.CLOSE);
         Roof openCloseRoof = new Roof(3,ROOFTYPE.OPENANDCLOSE);
 
-        Convertible con1 = new Convertible(1,"Convertible",TYPE.TESLA,2010, openRoof,2);
-        Convertible con2 = new Convertible(2,"BMW",TYPE.BMW,2030, closeRoof,6);
-        Convertible con3 = new Convertible(3,"HONDA",TYPE.HONDA,2050, openCloseRoof,10);
+        Convertible con1 = new Convertible(1,"Convertible",TYPE.TESLA,2010, 300.00,openRoof,2);
+//        Convertible con = new Convertible(1,"Convertible",TYPE.TESLA,2010, 2000.00,openRoof,2);
+        Convertible con2 = new Convertible(2,"BMW",TYPE.BMW,2030, 15000.00,closeRoof,6);
+        Convertible con3 = new Convertible(3,"HONDA",TYPE.HONDA,2050, 2500.00,openCloseRoof,10);
 
 
         //Company Cars
@@ -83,9 +84,9 @@ public class Main {
 //        numCar.add(benz);
 //        numCar.add(con1);
 
-
-        System.out.println(con1);
-        System.out.println(con1.getName());
+//
+//        System.out.println(con1);
+//        System.out.println(con1.getName());
 
 
         //Composition Principle
@@ -97,11 +98,19 @@ public class Main {
         decaCars.setAllCars(companyCars);
         decaCars.setTypeOfCars(carTypes);
 
-        System.out.println(decaCars);
+//        System.out.println(decaCars);
 
         Car secondCar = decaCars.getAllCars().get(1);
         Staff thirdStaff = decaCars.getStaff().get(2);
         System.out.println(secondCar);
-        System.out.println(thirdStaff);
+//        System.out.println(thirdStaff);
+
+
+        CarBuyer Ben = new CarBuyer(1,"Ben J",2000.00);
+
+
+        System.out.println(Ben.buyCar(decaCars,con1));
+        System.out.println(decaCars.getAllCars().size());
+        System.out.println(Ben.getMoney());
     }
 }

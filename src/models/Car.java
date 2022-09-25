@@ -12,6 +12,7 @@ public abstract class Car {
     private String name;
     private TYPE typeOfCar;
     private Integer modelYear;
+    private Double price;
 
 
     // No-Arguement constructor
@@ -20,15 +21,15 @@ public abstract class Car {
 
 
     // All arguement constructor
-    public Car(Integer id, String name, TYPE typeOfCar, Integer modelYear) {
+
+    public Car(Integer id, String name, TYPE typeOfCar, Integer modelYear, Double price) {
         this.id = id;
         this.name = name;
         this.typeOfCar = typeOfCar;
         this.modelYear = modelYear;
+        this.price = price;
     }
 
-
-    //Getters and Setters
     public Integer getId() {
         return id;
     }
@@ -49,33 +50,35 @@ public abstract class Car {
         return typeOfCar;
     }
 
-
     public void setTypeOfCar(TYPE typeOfCar) {
         this.typeOfCar = typeOfCar;
     }
 
-    public String getModelYear() {
-        if(this.modelYear>=2022){
-        return "Buy this Car";
-        } else {
-            return "Don't buy this car";
-        }
+    public Integer getModelYear() {
+        return modelYear;
     }
 
     public void setModelYear(Integer modelYear) {
-        modelYear+=10;
         this.modelYear = modelYear;
     }
 
+    public Double getPrice() {
+        return price;
+    }
 
-    //String method Overiding
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+
     @Override
     public String toString() {
-        return "Car[" +
+        return "Car{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", typeOfCar=" + typeOfCar +
                 ", modelYear=" + modelYear +
-                ']';
+                ", price=" + price +
+                '}';
     }
 }
